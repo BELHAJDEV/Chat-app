@@ -1,0 +1,36 @@
+
+$myblue : blue;
+$myGreen : #00BFA6;
+$myBlack : rgb(56, 55, 55);
+$btnPadding : 10px 15px;
+$bg : #eee;
+
+
+
+
+@mixin flex($direction,$align,$justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    
+    
+}
+
+@mixin btn{
+    padding: $btnPadding;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    width: fit-content;
+    
+
+}
+
+@mixin AbsoluteCenter {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    position: absolute;
+}

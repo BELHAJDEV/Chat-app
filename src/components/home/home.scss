@@ -1,0 +1,444 @@
+@import  "../variables";
+
+.home_container{
+    @include flex(row,flex-start,center);
+    background-color: $bg;
+    height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    padding-top: 70px;
+    .sidebar_chat.web{
+        @include flex(column,center,flex-start);
+        border-right: 1px solid lightgray;
+        min-height: 100vh;
+        max-height: 100vh;
+        border-right: 1px solid $bg;
+        overflow-y: auto;
+        width: 30%;
+        z-index: 1;
+        position: relative;
+
+        header{
+            @include flex(row,center,flex-start);
+            width: 100%;
+            padding: 15px 10px;
+            // background-color: red;
+            border-bottom: 1px solid rgb(203, 202, 202);
+            .srch {
+                width: 80%;
+            
+            form {
+                @include flex(row,center,center);
+                width: 100%;
+                // background-color: red;
+                position: relative;
+                z-index: 10;
+                input {
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+                    padding: 8px 10px;
+                    border-radius: 20px;
+                    width: 100%;
+                    margin-left: 10px;
+                    min-width: 250px;
+                }
+                button{
+                    position: absolute;
+                    right: 0px;
+                    top: 50%;   
+                    transform: translateY(-50%);
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    font-size: 20px;
+                    background-color: transparent;
+                    color: $myGreen;
+                }
+            }
+            }
+
+        }
+
+        .side_msgs{
+            
+            @include flex(column,flex-start,center);
+            width: 100%;
+            .msg{
+                cursor: pointer;
+                // transition: .3s;
+                position: relative;
+                width: 100%;
+                padding: 20px 10px;
+                background-color: white;
+                border-bottom: 1px solid #eee;
+                @include flex(row,flex-start,flex-start);
+                .name_text{
+                    margin-left: 10px;
+                    .text{
+                        font-size: 15px;
+                    }
+                }
+                span {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 10px;
+                    background-color: $myGreen;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    @include flex(column,center,center);
+                    color: white;
+
+                }
+
+            }
+            .msg:hover{
+                background-color: #eee;
+            }
+            .no_inbox{
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                // background-color: red;
+            }
+        }
+
+    }
+    .chat{
+        // position: relative;
+        width: 70%;
+        height: 100%;
+        max-height: 100vh;
+        overflow-y: auto;
+        background-color: rgb(218, 215, 215);
+        @include flex(column,center,flex-start);
+        padding: 20px;
+        padding-bottom: 150px;
+        .msg{
+            width: 100%;
+            // background-color: white;
+            .text {
+                
+                width: fit-content;
+                max-width: 250px;
+                padding: 10px;
+                
+            }
+            span{
+                margin: 10px 0;
+                font-size: 15px
+            }
+        }
+        .msg.he{
+            @include flex(column,flex-start,flex-end);
+            .text{
+                background-color: white;
+                border-top-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+        }
+        .msg.me{
+            @include flex(column,flex-end,flex-end);
+
+            width: 100%;
+            // background-color: white;
+            .text {
+
+                background-color: $myGreen;
+                width: fit-content;
+                max-width: 250px;
+                padding: 10px;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+        }
+
+        footer{
+        
+            position: fixed;
+            bottom: 0;
+            width: 70%;
+            background-color: white;
+            height: 80px;
+            border: 1px solid rgb(212, 211, 211);
+            border-radius: 10px;
+            @include flex(row,center,center);
+
+            .imojies{
+                font-size: 22px;
+                cursor: pointer;
+                i{
+                    font-size: 22px;
+                    color: $myGreen;
+                }
+            }
+            form {
+                margin-left: 10px;
+                input{
+                    min-width: 500px;
+                    border: none;
+                    outline: none;
+                    padding: 10px;
+                    font-size: 18px;
+                    border-radius: 8px;
+                    background-color: #eee;
+                }
+                button{
+                    border: none;
+                    outline: none;
+                    padding: 10px;
+                    font-size: 18px;
+                    color: $myGreen;
+                    font-size: 22px;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+    .sidebar_chat.mobile{
+        display: none;
+        border-bottom: 1px solid lightgray;
+        
+        min-height: 100vh;
+        max-height: 100vh;
+        border-right: 1px solid $bg;
+        overflow-y: auto;
+        width: 30%;
+
+        header{
+            @include flex(row,center,flex-start);
+            width: 100%;
+            padding: 15px 10px;
+            // background-color: red;
+            border-bottom: 1px solid rgb(203, 202, 202);
+            .srch {
+                width: 80%;
+            
+            form {
+                @include flex(row,center,center);
+                width: 100%;
+                // background-color: red;
+                position: relative;
+                z-index: 10;
+                input {
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+                    padding: 8px 10px;
+                    border-radius: 20px;
+                    width: 100%;
+                    margin-left: 10px;
+                    min-width: 100px;
+                }
+                button{
+                    position: absolute;
+                    right: 0px;
+                    top: 50%;   
+                    transform: translateY(-50%);
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    font-size: 20px;
+                    background-color: transparent;
+                    color: $myGreen;
+                }
+            }
+            }
+
+        }
+
+        .side_msgs{
+            
+            @include flex(column,flex-start,center);
+            width: 100%;
+            .msg{
+                cursor: pointer;
+                // transition: .3s;
+                position: relative;
+                width: 100%;
+                padding: 20px 10px;
+                background-color: white;
+                border-bottom: 1px solid #eee;
+                @include flex(row,flex-start,flex-start);
+                .name_text{
+                    margin-left: 10px;
+                    .text{
+                        font-size: 15px;
+                    }
+                }
+                span {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 10px;
+                    background-color: $myGreen;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    @include flex(column,center,center);
+                    color: white;
+
+                }
+
+            }
+            .msg:hover{
+                background-color: #eee;
+            }
+            .no_inbox{
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                // background-color: red;
+            }
+        }
+        // display: none;
+    }
+
+    .chat::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+
+    @media (max-width:1200px) {
+        .sidebar_chat.web{
+            width: 40%;
+            header{
+                form{
+                    input{
+                        min-width: 250px;
+                    }
+                }
+            }
+        }
+        .chat{
+            width: 60%;
+            footer {
+                width: 60%;
+                form {
+                    input {
+                        min-width: 350px;
+                    }
+                }
+            }
+            
+        }
+    }
+    @media (max-width:992px) {
+        .sidebar_chat.web{
+            width: 50%;
+            header{
+                .srch{
+                    form{
+                        input{
+                            min-width: 200px;
+                        }
+                    }
+                }
+            }
+        }
+        .chat{
+            width: 50%;
+            footer {
+                width: 50%;
+                form {
+                    input {
+                        min-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:767px) {
+        .sidebar_chat.web{
+            width: 50%;
+            header{
+                form{
+                    input{
+                        min-width: 100px;
+                    }
+                }
+            }
+        }
+        .chat{
+            width: 50%;
+            footer {
+                width: 50%;
+                form {
+                    input {
+                        min-width: 200px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:667px) {
+        .sidebar_chat.web{
+            width: 50%;
+            header{
+                form{
+                    input{
+                        min-width: 100px;
+                    }
+                }
+            }
+        }
+        .chat{
+            width: 50%;
+            footer {
+                width: 50%;
+                .imojies{
+                    position: absolute;
+                    left: 10px;
+                }
+                form {
+                    input {
+                        min-width: 150px;
+                    }
+                    button{
+                        position: absolute;
+                        right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:567px) {
+        .sidebar_chat.web{
+            display: none;
+        }
+        .chat{
+            // width: 50%;
+            display: none;
+        }
+        .sidebar_chat.mobile{
+        @include flex(column,center,flex-start);
+            width: 100%;
+            header{
+                form{
+                    input{
+                        min-width: 100px;
+                    }
+                }
+            }
+        }
+        .chat{
+            width: 50%;
+        }
+    }
+
+}
+
+.home_container_of{
+    @extend .home_container;
+    filter: blur(8px);
+    transition: .3s;
+}

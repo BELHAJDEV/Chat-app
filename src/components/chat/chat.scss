@@ -1,0 +1,221 @@
+@import  "../variables";
+
+.chat{
+    // position: relative;
+    width: 70%;
+    height: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgb(218, 215, 215);
+    @include flex(column,center,flex-start);
+    padding: 170px 20px 80px 20px;
+    margin: 0 auto;
+    
+    .msg{
+        width: 100%;
+        // background-color: white;
+        .text {
+            
+            width: fit-content;
+            min-width: 80px;
+            max-width: 250px;
+            padding: 10px;
+            
+        }
+        span{
+            margin: 5px 0;
+            font-size: 15px
+        }
+    }
+    .msg.he{
+        @include flex(column,flex-start,flex-end);
+        .text{
+            background-color: white;
+            border-top-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+    }
+    .msg.me{
+        @include flex(column,flex-end,flex-end);
+
+        width: 100%;
+        // background-color: white;
+        .text {
+
+            background-color: $myGreen;
+            width: fit-content;
+            max-width: 250px;
+            padding: 10px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 69%;
+        background-color: white;
+        height: 80px;
+        // border: 1px solid rgb(212, 211, 211);
+        border-left: 1px solid rgb(212, 211, 211);
+        border-radius: 10px;
+        @include flex(row,center,center);
+
+        .imojies{
+            font-size: 22px;
+            cursor: pointer;
+            i{
+                font-size: 22px;
+                color: $myGreen;
+            }
+        }
+        form {
+            margin-left: 10px;
+            input{
+                min-width: 500px;
+                border: none;
+                outline: none;
+                padding: 10px;
+                font-size: 18px;
+                border-radius: 8px;
+                background-color: #eee;
+            }
+            button{
+                border: none;
+                outline: none;
+                padding: 10px;
+                font-size: 18px;
+                color: $myGreen;
+                font-size: 22px;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+
+    }
+    .user_chat{
+        padding: 10px 15px;
+        position: fixed;
+        top: 70px;
+        width: 70%;
+        background-color: rgb(255, 255, 255);
+        height: 80px;
+        // border: 1px solid rgb(212, 211, 211);
+        // border-radius: 10px;
+        border-left: 1px solid #eee;
+        @include flex(row,center,flex-start);
+        > i {
+            cursor: pointer;
+            font-size: 22px;
+            color: gray;
+            margin-right: 10px;
+        }
+        .name_date{
+            margin-left: 10px;
+            h3{
+                font-weight: normal;
+            }
+        }
+    }
+    @media (max-width:567px) {
+        .user_chat{
+            width: 70px;
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .chat{
+        width: 75%;
+        footer,
+        .user_chat{
+            width: 73%;
+            form{
+                input{
+                    min-width: 450px;
+                }
+            }
+        }
+    }
+}
+@media (max-width:767px) {
+    .chat{
+        width: 80%;
+        footer,
+        .user_chat {
+            width: 78%;
+            form{
+                input{
+                    min-width: 350px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:567px) {
+    .chat{
+        width: 100%;
+        footer,
+        .user_chat {
+            width: 100%;
+            form{
+                input{
+                    min-width: 250px;
+                }
+            }
+        }
+        footer{
+            // background-color: rgb(247, 231, 18);
+            form {
+                input{
+                    width: 200px;
+                }
+            }
+        }
+        
+    }
+}
+@media (max-width:321px) {
+    .chat{
+        width: 100%;
+        footer,
+        .user_chat {
+            width: 100%;
+            .imojies{
+                position: absolute;
+                left: 0px;
+                z-index: 10;
+                background-color: white;
+                padding: 7px 10px;
+                
+            }
+            form{
+                input{
+                    min-width: 320px;
+                    padding-left: 38px;
+                }
+                button{
+                    position: absolute;
+                    right: 0px;
+                    z-index: 10;
+                    background-color: white;
+                    padding: 7px 10px;
+                }
+            }
+        }
+        footer{
+            // background-color: rgb(247, 231, 18);
+            form {
+                input{
+                    width: 150px;
+                }
+            }
+        }
+    }
+}

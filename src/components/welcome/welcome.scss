@@ -1,0 +1,63 @@
+@import '../variables';
+
+.welcome_container{
+    min-height: 100vh;
+    background-color: $bg;
+    padding-top: 80px;
+    @include flex(row,center,center);
+    flex-wrap: wrap-reverse;
+    .title{
+        width: 70%;
+        flex: 2;
+        // background-color: red;
+        @include flex(column,center,center);
+       h1{
+           color: $myBlack;
+           margin-bottom: 20px;
+           font-size: 40px;
+           text-align: center;
+           width: 100%;
+       }
+       @media (max-width:567px) {
+           h1{
+               font-size: 30px
+           }
+       }
+        .sign_btn{
+            margin-bottom: 30px;
+            @include flex(row,center,center);
+            @include btn;
+            background-color: $myGreen;
+            color: white;
+            font-size: 20px;
+            i{
+            font-size: 20px;
+
+            }
+        }
+    }
+
+    
+    .image{
+        
+        @include flex(column,center,center);
+
+        img{
+            max-width: 70%;
+        }
+        
+    }
+
+
+    @media (min-width:1200px) {
+        .image{
+            max-width: 50%;
+            // background-color: red;
+        }
+        .title{
+            // background-color: green;
+            // min-width: 30%;
+            // margin-left: 10px;
+        }
+    }
+}
